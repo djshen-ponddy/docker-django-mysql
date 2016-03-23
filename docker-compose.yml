@@ -5,11 +5,9 @@
 #####
 
 db:
-    image: postgres:9.4
-    volumes:
-        - /opt/starter/psql:/var/lib/postgresql/data/pgdata
-    env_file:
-        - ./config/environment/development.env
+  image: mariadb:10.1
+  env_file:
+    - ./config/environment/development.env
 
 webserver:
     build: .

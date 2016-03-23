@@ -10,15 +10,15 @@ variables.
 
 import os
 import sys
-import psycopg2
+import MySQLdb
 
 
 def database_check():
-    dbname = os.environ.get('POSTGRES_DB')
-    user = os.environ.get('POSTGRES_USER')
-    password = os.environ.get('POSTGRES_PASSWORD')
-    host = os.environ.get('POSTGRES_HOST')
-    port = os.environ.get('POSTGRES_PORT')
+    dbname = os.environ.get('MYSQL_DATABASE')
+    user = os.environ.get('MYSQL_USER')
+    password = os.environ.get('MYSQL_PASSWORD')
+    host = os.environ.get('MYSQL_HOST')
+    port = int(os.environ.get('MYSQL_PORT'))
 
     print("HOST: {host}:{port}, DB: {dbname}, USER: {user}".format(
         dbname=dbname,
@@ -27,13 +27,14 @@ def database_check():
         port=port))
 
     try:
-        psycopg2.connect(
-            dbname=dbname,
+        MySQLdb.connect(
+            db=dbname,
             user=user,
-            password=password,
+            passwd=password,
             host=host,
             port=port)
-    except:
+    except Exception as e:
+        print(e)
         sys.exit(1)
 
     sys.exit(0)

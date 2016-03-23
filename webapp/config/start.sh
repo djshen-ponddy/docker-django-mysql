@@ -11,10 +11,10 @@
 # $?                most recent foreground pipeline exit status
 # > /dev/null 2>&1  get stderr while discarding stdout
 #####
-python3 /srv/config/database-check.py > /dev/null 2>&1
+python3 /srv/config/database-check.py #> /dev/null 2>&1
 while [[ $? != 0 ]] ; do
-    sleep 5; echo "*** Waiting for postgres container ..."
-    python3 /srv/config/database-check.py > /dev/null 2>&1
+    sleep 5; echo "*** Waiting for mariadb container ..."
+    python3 /srv/config/database-check.py #> /dev/null 2>&1
 done
 
 
