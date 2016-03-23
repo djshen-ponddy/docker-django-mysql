@@ -2,6 +2,7 @@ Docker Django
 -------------
 
 [![Circle CI](https://circleci.com/gh/erroneousboat/docker-django/tree/master.svg?style=shield)](https://circleci.com/gh/erroneousboat/docker-django/tree/master)
+[![Circle CI](https://circleci.com/gh/djshen-ponddy/docker-django-mysql/tree/master.svg?style=svg)](https://circleci.com/gh/djshen-ponddy/docker-django-mysql/tree/master)
 
 ## tl;dr
 ```bash
